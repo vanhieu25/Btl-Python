@@ -1,2 +1,19 @@
 # Btl-Python
-Bài tập lớn của nhóm 4 học phần lập trình Python. Đề tài 14: Xây dựng phần mềm quản lý đại lý xe hơi. 
+
+A Python project for academic purposes.
+
+## Structure
+
+- `src/` - Main source code
+- `tests/` - Unit tests
+- `requirements.txt` - Dependencies
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+## License
+
+See [LICENSE](LICENSE).
