@@ -1,19 +1,19 @@
-# Btl-Python
+# Xây dựng phần mềm quản lý đại lý xe hơi
 
-A Python project for academic purposes.
+## Thành viên nhóm
+- Nguyễn Văn Hiếu (Trưởng nhóm)
+- Lê Minh Đạt
+- Nguyễn Hữu Hải
 
-## Structure
-
-- `src/` - Main source code
+## Cấu trúc dự án
+- `src/` - Mã nguồn chính
 - `tests/` - Unit tests
-- `requirements.txt` - Dependencies
+- `requirements.txt` - Danh sách các thư viện phụ thuộc
 
-## Setup
-
+## Cài đặt
 ```bash
 pip install -r requirements.txt
 ```
 
-## License
-
-See [LICENSE](LICENSE).
+## Giấy phép
+Xem chi tiết tại [LICENSE](LICENSE).
