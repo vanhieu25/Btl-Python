@@ -14,6 +14,8 @@ from PyQt6.QtGui import QIcon, QFont
 # Import views
 from views.dashboard_demo import DashboardDemo
 from views.xe_demo import XeDemo
+from views.khach_hang_demo import KhachHangDemo
+from views.xe_demo import XeDemo
 
 
 class MainWindowDemo(QMainWindow):
@@ -214,7 +216,7 @@ class MainWindowDemo(QMainWindow):
         
         # Placeholder views for other sections
         self.xe_view = XeDemo()
-        self.khachhang_view = self.create_placeholder_view("Khách Hàng", "👥")
+        self.khachhang_view = KhachHangDemo()
         self.hopdong_view = self.create_placeholder_view("Hợp Đồng", "📄")
         self.nhanvien_view = self.create_placeholder_view("Nhân Viên", "👨‍💼")
         self.baocao_view = self.create_placeholder_view("Báo Cáo", "📈")
