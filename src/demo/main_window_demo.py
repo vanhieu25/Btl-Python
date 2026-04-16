@@ -13,6 +13,7 @@ from PyQt6.QtGui import QIcon, QFont
 
 # Import views
 from views.dashboard_demo import DashboardDemo
+from views.xe_demo import XeDemo
 
 
 class MainWindowDemo(QMainWindow):
@@ -212,7 +213,7 @@ class MainWindowDemo(QMainWindow):
         self.content_stack.addWidget(self.dashboard_view)
         
         # Placeholder views for other sections
-        self.xe_view = self.create_placeholder_view("Quản lý Xe", "🚙")
+        self.xe_view = XeDemo()
         self.khachhang_view = self.create_placeholder_view("Khách Hàng", "👥")
         self.hopdong_view = self.create_placeholder_view("Hợp Đồng", "📄")
         self.nhanvien_view = self.create_placeholder_view("Nhân Viên", "👨‍💼")
