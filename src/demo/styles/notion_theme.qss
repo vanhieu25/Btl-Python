@@ -1,0 +1,351 @@
+/*
+ * Notion-inspired Design System for PyQt6
+ * Colors, Typography, Components
+ */
+
+/* ==================== GLOBAL ==================== */
+* {
+    font-family: "Inter", "Segoe UI", -apple-system, sans-serif;
+}
+
+/* ==================== MAIN WINDOW ==================== */
+QMainWindow {
+    background-color: #ffffff;
+}
+
+/* ==================== SIDEBAR ==================== */
+QFrame#sidebar {
+    background-color: #f6f5f4;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    min-width: 240px;
+    max-width: 260px;
+}
+
+QLabel#sidebar-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.95);
+    padding: 8px 0px;
+}
+
+QPushButton#nav-btn {
+    text-align: left;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.95);
+    background: transparent;
+}
+
+QPushButton#nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+QPushButton#nav-btn-active {
+    text-align: left;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== CONTENT AREA ==================== */
+QWidget#content-area {
+    background-color: #ffffff;
+    padding: 24px 32px;
+}
+
+QLabel#page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.95);
+    letter-spacing: -0.5px;
+}
+
+QLabel#page-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #615d59;
+    margin-top: 4px;
+}
+
+/* ==================== CARDS ==================== */
+QFrame#card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+QFrame#card:hover {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+QLabel#card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #615d59;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+QLabel#card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.95);
+    letter-spacing: -0.5px;
+}
+
+QLabel#card-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: #1aae39;
+}
+
+QLabel#card-subtitle-down {
+    font-size: 13px;
+    font-weight: 400;
+    color: #dd5b00;
+}
+
+/* Card variations */
+QFrame#card-blue {
+    background-color: #f2f9ff;
+    border: 1px solid rgba(0, 117, 222, 0.15);
+    border-radius: 12px;
+}
+
+QFrame#card-green {
+    background-color: #f0fdf4;
+    border: 1px solid rgba(26, 174, 57, 0.15);
+    border-radius: 12px;
+}
+
+QFrame#card-orange {
+    background-color: #fff7ed;
+    border: 1px solid rgba(221, 91, 0, 0.15);
+    border-radius: 12px;
+}
+
+QFrame#card-purple {
+    background-color: #faf5ff;
+    border: 1px solid rgba(147, 51, 234, 0.15);
+    border-radius: 12px;
+}
+
+/* ==================== BUTTONS ==================== */
+QPushButton#btn-primary {
+    background-color: #0075de;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QPushButton#btn-primary:hover {
+    background-color: #005bab;
+}
+
+QPushButton#btn-secondary {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+QPushButton#btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+QPushButton#btn-ghost {
+    background-color: transparent;
+    color: #0075de;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+QPushButton#btn-ghost:hover {
+    text-decoration: underline;
+    background-color: rgba(0, 117, 222, 0.05);
+}
+
+/* ==================== TABLES ==================== */
+QTableWidget {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    gridline-color: rgba(0, 0, 0, 0.05);
+    selection-background-color: #f2f9ff;
+    selection-color: rgba(0, 0, 0, 0.95);
+}
+
+QTableWidget::item {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+QTableWidget::item:selected {
+    background-color: #f2f9ff;
+    color: rgba(0, 0, 0, 0.95);
+}
+
+QHeaderView::section {
+    background-color: #f6f5f4;
+    color: rgba(0, 0, 0, 0.95);
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 8px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 8px;
+}
+
+/* ==================== PILLS / BADGES ==================== */
+QLabel#pill-blue {
+    background-color: #f2f9ff;
+    color: #097fe8;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+QLabel#pill-green {
+    background-color: #f0fdf4;
+    color: #1aae39;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+QLabel#pill-orange {
+    background-color: #fff7ed;
+    color: #dd5b00;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+QLabel#pill-gray {
+    background-color: #f6f5f4;
+    color: #615d59;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ==================== INPUTS ==================== */
+QLineEdit {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #0075de;
+    outline: none;
+}
+
+QLineEdit::placeholder {
+    color: #a39e98;
+}
+
+QComboBox {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+QComboBox:focus {
+    border: 1px solid #0075de;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #615d59;
+    width: 0;
+    height: 0;
+}
+
+/* ==================== SCROLLBAR ==================== */
+QScrollBar:vertical {
+    background-color: transparent;
+    width: 8px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    min-height: 32px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+/* ==================== SEPARATORS ==================== */
+QFrame#separator {
+    background-color: rgba(0, 0, 0, 0.1);
+    max-height: 1px;
+    margin: 16px 0px;
+}
+
+/* ==================== CHART PLACEHOLDER ==================== */
+QFrame#chart-placeholder {
+    background-color: #f6f5f4;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+QLabel#chart-placeholder-text {
+    color: #a39e98;
+    font-size: 14px;
+    font-weight: 500;
+}
