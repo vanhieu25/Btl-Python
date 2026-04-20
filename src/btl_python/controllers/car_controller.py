@@ -76,10 +76,14 @@ class CarController:
         return car
     
     def delete_car(self, car_id: int) -> bool:
-        """Delete car by ID"""
+        """Delete car by ID - prevent deletion if car has contracts"""
         car = self.get_car_by_id(car_id)
         if not car:
             return False
+        
+        # Prevent deletion if car has associated contracts
+        if len(car.contracts) > 0:
+            raise ValueError(f"Cannot delete car {car.car_code} - it has {len(car.contracts)} associated contract(s)")
         
         self.db.delete(car)
         self.db.commit()

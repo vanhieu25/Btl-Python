@@ -261,7 +261,7 @@ class CarView:
             print(f"\n❌ LỖI KHÔNG XÁC ĐỊNH: {str(e)}")
     
     def delete_car(self):
-        """Delete car with Apple-style confirmation"""
+        """Delete car with Apple-style confirmation and contract validation"""
         print("\n🗑️ XÓA XE")
         print("─" * 40)
         
@@ -272,6 +272,14 @@ class CarView:
             if not car:
                 print("\n❌ KHÔNG TÌM THẤY XE")
                 print(f"   Không có xe nào với ID {car_id}")
+                return
+            
+            # Check if car has contracts before deletion
+            if len(car.contracts) > 0:
+                print(f"\n⚠️  KHÔNG THỂ XÓA XE")
+                print(f"   Xe {car.car_code} có {len(car.contracts)} hợp đồng liên quan.")
+                print(f"   Vui lòng hủy/xử lý các hợp đồng trước khi xóa xe.")
+                print("─" * 40)
                 return
             
             print(f"\n📋 THÔNG TIN XE CẦN XÓA:")

@@ -4,7 +4,8 @@ SQLAlchemy Models
 """
 
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, Text
+from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, Text, ForeignKey
+from sqlalchemy.orm import relationship
 from .database.connection import Base
 
 
@@ -25,3 +26,6 @@ class Car(Base):
     status = Column(String(20), default="available")  # available, sold, reserved
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.now)
+    
+    # Relationships
+    contracts = relationship("Contract", back_populates="car")
