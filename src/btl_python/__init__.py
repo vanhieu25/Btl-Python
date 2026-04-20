@@ -1,3 +1,3 @@
 """
-Btl-Python - Main package initializer.
+Btl Python package
 """
