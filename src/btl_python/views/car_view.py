@@ -141,18 +141,39 @@ class CarView:
             print(f"\n❌ LỖI KHÔNG XÁC ĐỊNH: {str(e)}")
     
     def search_cars(self):
-        """Search cars with Apple-style input and feedback"""
-        print("\n🔍 TÌM KIẾM XE")
-        print("─" * 40)
+        """Search cars with Apple-style input and advanced filtering"""
+        print("\n🔍 TÌM KIẾM VÀ LỌC XE NÂNG CAO")
+        print("─" * 50)
         print("Nhập tiêu chí tìm kiếm (bỏ trống nếu không cần lọc):")
-        print("─" * 40)
+        print("─" * 50)
         
-        brand = input("Hãng xe (ví dụ: Toyota): ").strip() or None
-        model = input("Dòng xe (ví dụ: Camry): ").strip() or None
+        # Basic search criteria
+        brand = input("Hãng xe (ví dụ: Toyota, Honda): ").strip() or None
+        model = input("Dòng xe (ví dụ: Camry, Civic): ").strip() or None
+        color = input("Màu sắc (ví dụ: Đen, Trắng): ").strip() or None
+        
+        # Year range
         year_from = input("Năm SX từ (ví dụ: 2020): ").strip() or None
         year_to = input("Năm SX đến (ví dụ: 2024): ").strip() or None
-        price_from = input("Giá từ (VNĐ): ").strip() or None
-        price_to = input("Giá đến (VNĐ): ").strip() or None
+        
+        # Price range
+        price_from = input("Giá từ (VNĐ, ví dụ: 500000000): ").strip() or None
+        price_to = input("Giá đến (VNĐ, ví dụ: 2000000000): ").strip() or None
+        
+        # Status filter
+        print("\n📋 TRẠNG THÁI XE:")
+        print("   1. Còn hàng (available)")
+        print("   2. Đã bán (sold)")
+        print("   3. Sắp về (reserved)")
+        print("   4. Tất cả trạng thái")
+        status_choice = input("Chọn trạng thái (1-4): ").strip()
+        
+        status_map = {
+            "1": "available",
+            "2": "sold", 
+            "3": "reserved"
+        }
+        status = status_map.get(status_choice, None)
         
         # Convert to appropriate types
         try:
@@ -164,17 +185,21 @@ class CarView:
             cars = self.controller.search_cars(
                 brand=brand,
                 model=model,
+                color=color,
                 year_from=year_from,
                 year_to=year_to,
                 price_from=price_from,
-                price_to=price_to
+                price_to=price_to,
+                status=status
             )
             
-            print(f"\n🔍 Đang tìm xe...")
+            print(f"\n🔍 KẾT QUẢ TÌM KIẾM:")
             print(f"   Hãng: {brand or 'Bất kỳ'}")
             print(f"   Dòng xe: {model or 'Bất kỳ'}")
+            print(f"   Màu sắc: {color or 'Bất kỳ'}")
             print(f"   Năm: {f'{year_from}-{year_to}' if year_from or year_to else 'Bất kỳ'}")
             print(f"   Giá: {f'{price_from:,.0f}-{price_to:,.0f} VNĐ' if price_from or price_to else 'Bất kỳ'}")
+            print(f"   Trạng thái: {status or 'Bất kỳ'}")
             print()
             
             self.display_cars(cars)

@@ -91,21 +91,37 @@ class CarController:
     
     def search_cars(self, brand: str = None, model: str = None, 
                     year_from: int = None, year_to: int = None,
-                    price_from: float = None, price_to: float = None) -> List[Car]:
-        """Search cars with filters"""
+                    price_from: float = None, price_to: float = None,
+                    status: str = None, color: str = None) -> List[Car]:
+        """Search cars with advanced filters and multiple criteria combination"""
         query = self.db.query(Car)
         
+        # Brand filter (case-insensitive partial match)
         if brand:
             query = query.filter(Car.brand.ilike(f"%{brand}%"))
+        
+        # Model filter (case-insensitive partial match)  
         if model:
             query = query.filter(Car.model.ilike(f"%{model}%"))
+            
+        # Color filter (case-insensitive partial match)
+        if color:
+            query = query.filter(Car.color.ilike(f"%{color}%"))
+        
+        # Year range filter
         if year_from:
             query = query.filter(Car.year >= year_from)
         if year_to:
             query = query.filter(Car.year <= year_to)
+            
+        # Price range filter
         if price_from:
             query = query.filter(Car.price >= price_from)
         if price_to:
             query = query.filter(Car.price <= price_to)
+            
+        # Status filter (exact match)
+        if status:
+            query = query.filter(Car.status == status)
         
         return query.all()
